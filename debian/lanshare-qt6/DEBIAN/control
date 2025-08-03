@@ -1,0 +1,11 @@
+Package: lanshare-qt6
+Version: 1.2.1-0ubuntu1
+Architecture: amd64
+Maintainer: Néstor Amigo <tuemail@example.com>
+Installed-Size: 358
+Depends: libc6 (>= 2.34), libgcc-s1 (>= 3.0), libqt6core6 (>= 6.2.0), libqt6gui6 (>= 6.1.2), libqt6network6 (>= 6.1.2), libqt6widgets6 (>= 6.1.2), libstdc++6 (>= 5)
+Section: net
+Priority: optional
+Homepage: https://github.com/NestorAmigo/LANShare-Qt6
+Description: LANShare ported to Qt6
+ A simple local network file transfer application ported to Qt6.2.

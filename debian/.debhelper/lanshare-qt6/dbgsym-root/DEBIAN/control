@@ -1,0 +1,13 @@
+Package: lanshare-qt6-dbgsym
+Package-Type: ddeb
+Source: lanshare-qt6
+Version: 1.2.1-0ubuntu1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Néstor Amigo <tuemail@example.com>
+Installed-Size: 105
+Depends: lanshare-qt6 (= 1.2.1-0ubuntu1)
+Section: debug
+Priority: optional
+Description: debug symbols for lanshare-qt6
+Build-Ids: f4432f783a109d3cd799c3e354f8141de5e394b9

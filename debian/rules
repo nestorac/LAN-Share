@@ -1,11 +1,28 @@
 #!/usr/bin/make -f
 
+QMAKE=/usr/lib/qt6/bin/qmake
+PRO_FILE=src/LANShare.pro
+DESTDIR=$(CURDIR)/debian/lanshare-qt6
+BINARY_NAME=LANShare
+BUILD_DIR=build
+
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-export QT_SELECT = qt6
+export DEB_CXXFLAGS_MAINT_APPEND = -Wall -pedantic
 
 %:
 	dh $@ --buildsystem=qmake --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- \
-		QMAKE=qmake6
+	mkdir -p $(BUILD_DIR)
+	cd $(BUILD_DIR) && $(QMAKE) ../$(PRO_FILE)
+
+override_dh_auto_build:
+	$(MAKE) -C $(BUILD_DIR) -j$(nproc)
+
+override_dh_auto_install:
+	install -D -m755 $(BUILD_DIR)/$(BINARY_NAME) $(DESTDIR)/usr/bin/$(BINARY_NAME)
+
+override_dh_auto_clean:
+	$(MAKE) -C $(BUILD_DIR) clean || true
+	rm -rf $(BUILD_DIR)
+	dh_auto_clean
