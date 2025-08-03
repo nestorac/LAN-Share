@@ -35,6 +35,8 @@ qrc_*.cpp
 
 build
 
+*.deb
+*/DEBIAN/md5sums
 debian/.debhelper
 debian/lanshare-qt6
 debian/lanshare-qt6.substvars
