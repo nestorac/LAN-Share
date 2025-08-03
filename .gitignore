@@ -34,3 +34,7 @@ moc_*.cpp
 qrc_*.cpp
 
 build
+
+debian/.debhelper
+debian/lanshare-qt6
+debian/lanshare-qt6.substvars
