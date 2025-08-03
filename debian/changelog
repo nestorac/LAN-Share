@@ -1,0 +1,7 @@
+lanshare-qt6 (1.2.1-0ubuntu1) jammy; urgency=medium
+
+  * Ported to Qt6.2
+  * Updated build system to CMake
+  * Fixed deprecated QRegExp usage
+
+ -- Néstor A.C. <nestorac@gmail.com>  Sun, 03 Aug 2025 20:15:00 +0200
